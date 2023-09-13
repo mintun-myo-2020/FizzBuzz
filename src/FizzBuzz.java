@@ -5,11 +5,12 @@ class FizzBuzz {
 
     public static void main(String[] args) {
 
-        for (int i = 1; i < 100; i++) {
+        int counter = 1;
+        while (doFizzBuzz(counter)) {
 
             // Find out which numbers divide i.
-            boolean divisibleBy3 = i % 3 == 0;
-            boolean divisibleBy5 = i % 5 == 0;
+            boolean divisibleBy3 = counter % 3 == 0;
+            boolean divisibleBy5 = counter % 5 == 0;
 
             // Print our appropriate result.
             if (divisibleBy3 && divisibleBy5) {
@@ -26,9 +27,15 @@ class FizzBuzz {
 
             } else {
 
-                System.out.println(i);
+                System.out.println(counter);
 
             }
+
+            counter++;
         }
+    }
+
+    private static boolean doFizzBuzz(int counter) {
+        return counter < 100;
     }
 }
